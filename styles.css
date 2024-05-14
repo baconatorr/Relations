@@ -1,0 +1,100 @@
+:root{
+  --row-width: 0;
+  --button-font-size: 15px;
+  --button-width: 90px;
+  --button-height: 30px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body{
+  font-family: "Libre Franklin", Arial;
+}
+
+.header{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+  font-weight: 600;
+  border-bottom: 0.3vh black solid;
+}
+
+.middle h1{
+  text-align: center;
+}
+
+.game{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.hint{
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.letter-display{
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  color: rgb(65, 65, 64);
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(var(--row-width), 150px);
+  column-gap: 8px;
+  row-gap: 10px;
+}
+
+.tile{
+  background-color: rgb(239, 239, 230);
+  height: 60px;
+  width: 120px;
+  border-radius: 10%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tile{
+  font-weight: 500;
+  font-size: 35px;
+  transition: transform .15s, box-shadow .15s;
+}
+
+.tile:hover{
+  transform: scale(105%);
+  box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.3);
+}
+
+.tile-active{
+  background-color: rgb(65, 65, 64);
+  color: white;
+  transform: scale(103%);
+  box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.3);
+}
+
+.bottom button{
+  font-family: "Libre Franklin", Arial;
+  font-size: var(--button-font-size);
+  width: var(--button-width);
+  height: var(--button-height);
+}
