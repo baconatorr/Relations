@@ -8,30 +8,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="link.png">
 </head>
 <body>
     <div class="container">
         <div class="header">
+            <div class="alert"></div>
             <div class="left"></div>
             <div class="middle">
                 <h1>Relations</h1>
             </div>
-            <div class="right"></div>
+            <div class="right">
+            <h1 id="date"></h1>
         </div>
-        <div class="game">
-            <div class="top">
+        </div>
+        <div class="game" id="game">
+            <div class="top" id="top">
                 <div class="hint">
                 </div>
                 <div class="letter-display"></div>
             </div>
+            <canvas id="lineCanvas"></canvas>
             <div class="grid">
             </div>
             <div class="bottom">
-                <button id="submit">Submit</button>
-                <button id="reset">RESET</button>
+                <button id="submit" onclick="submit()">SUBMIT</button>
+                <button id="reset" onclick="reset()">RESET</button>
             </div>
         </div>
     </div>
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 </body>
 </html>
