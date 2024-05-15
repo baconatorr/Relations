@@ -9,5 +9,16 @@
                 ["B", "O", "E", "P", "E"]
     ],
     "length": 25
+  },
+  {
+    "hint": "🥶",
+    "valid": ["cold", "frostbite", "chilly", "freeze"],
+    "letters": [["C", "L", "L", "Y", "E" ],
+                ["H", "I", "F", "R", "E"],
+                ["D", "L", "O", "C", "Z"],
+                ["E", "T", "I", "B", "E"],
+                ["F", "R", "O", "S", "T"]
+    ],
+    "length": 25
   }
 ]
