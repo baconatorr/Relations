@@ -15,7 +15,6 @@ let word1Id;
 let word2Id;
 let word3Id;
 
-
 window.onload = () => {
     document.querySelector(".letter-display").innerText = current.join('');
     loadSolution();
@@ -178,6 +177,7 @@ function submit() {
             return;
         }
     }
+    alert('Invalid Word');
     console.log('Invalid word');
 }
 
@@ -198,7 +198,7 @@ function addAnswer(number){
     let text = valid[number].toUpperCase() + " ✅";
     let display = document.getElementById("ans" + number);
     display.innerText = text;
-    display.classList.add("answer-correct" + number)
+    display.classList.add("answer-correct" + number);
 }
 
 function setSave(num){
@@ -258,4 +258,17 @@ function loadSave(){
             id.setAttribute("data-active", "true"); 
         }
     }
+}
+
+function alert(text){
+    const alert = document.querySelector(".alert");
+    alert.innerText = text;
+    alert.style.animation = 'none';
+    void alert.offsetWidth; 
+    alert.style.animation = 'fadeInDown 1s ease'; 
+    alert.style.opacity = 100;
+    alert.style.transform = 'translateY(0)';
+    void alert.offsetWidth; 
+    setTimeout(() => { alert.style.animation = 'fadeInUp 1s ease'; }, 1000);
+    alert.style.opacity = 0;
 }

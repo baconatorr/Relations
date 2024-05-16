@@ -14,6 +14,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 body{
@@ -32,6 +33,25 @@ body{
   border-bottom: 0.3vh black solid;
 }
 
+.alert {
+  height: 50px;
+  width: 150px;
+  background-color: rgb(65, 65, 64);
+  color: white;
+  position: absolute;
+  left: 50%; /* Horizontally center */
+  transform: translateX(-50%); /* Center with transform */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: calc(var(--button-font-size) * 1.5);
+  border-radius: 5px;
+  opacity: 0;
+  margin: 0;
+  margin-left: -90px;
+}
 .middle{
   position: absolute;
   left: 50%;
@@ -45,6 +65,7 @@ body{
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
 }
 
 .top{
@@ -58,12 +79,16 @@ body{
   text-align: center;
   font-weight: 600;
   font-size: 25px;
+  text-align: center;
 }
 
 .letter-display,
 .answer-display{
   height: 30px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 600;
   font-size: 25px;
   color: rgb(65, 65, 64);
@@ -172,3 +197,25 @@ body{
   left: 0;
   z-index: -1; /* Ensure the canvas is above the grid */
 }
+
+@keyframes fadeInDown {
+  0% {
+     opacity: 0;
+     transform: translateY(-20px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateY(0);
+  }
+} 
+
+@keyframes fadeInUp {
+  0% {
+     opacity: 1;
+     transform: translateY(0px);
+  }
+  100% {
+     opacity: 0;
+     transform: translateY(-20);
+  }
+} 
