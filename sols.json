@@ -3,8 +3,8 @@
     "hint": "To mess with",
     "valid": ["annoy", "irritate", "bother", "pester"],
     "letters": [["A", "O", "Y", "I", "R" ],
-                ["N", "N", "R", "R", "E"],
-                ["T", "A", "T", "I", "T"],
+                ["N", "N", "R", "I", "E"],
+                ["T", "A", "T", "R", "T"],
                 ["E", "O", "H", "R", "S"],
                 ["B", "T", "E", "P", "E"]
     ],
