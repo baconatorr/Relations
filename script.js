@@ -20,7 +20,7 @@ window.onload = () => {
     const day = new Date().getDate();
     const month = new Date().getMonth() + 1;
     const year = new Date().getFullYear();
-    let currentDate = new Date(`${month}/${day + 2}/${year}`);
+    let currentDate = new Date(`${month}/${day}/${year}`);
     let storedDate = localStorage.getItem('storedDate');
     if(currentDate == storedDate){
         loadStoredData();
@@ -43,7 +43,7 @@ function getDate() {
     let currentDate = new Date(`${month}/${day}/${year}`);
     let dateDisplay = document.getElementById('date');
     dateDisplay.innerText = `${month}/${day}/${year}`;
-    let compareDate = new Date("5/14/2024");
+    let compareDate = new Date("5/16/2024");
     let diffInTime = currentDate.getTime() - compareDate.getTime();
     let diffInDays = Math.round(diffInTime / (1000 * 3600 * 24));
     return diffInDays;
