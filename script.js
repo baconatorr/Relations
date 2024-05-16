@@ -174,12 +174,13 @@ function submit() {
             addAnswer(i);
             setSave(i);
             current = ["Enter a word"];
+            lastClickedTile = null;
             currentIds = [];
             reset();
             return;
         }
     }
-    lastClickedTile = lastClickedTile;
+     = ;
     alert('Invalid Word');
     console.log('Invalid word');
 }
