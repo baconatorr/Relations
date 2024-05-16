@@ -20,5 +20,16 @@
                 ["F", "R", "O", "S", "T"]
     ],
     "length": 25
+  },
+  {
+    "hint": "🎶",
+    "valid": ["note", "adagio", "compose", "baritone"],
+    "letters": [["B", "A", "R", "I", "T" ],
+                ["O", "N", "E", "N", "O"],
+                ["I", "G", "O", "T", "E"],
+                ["D", "A", "M", "P", "E"],
+                ["A", "C", "O", "O", "S"]
+    ],
+    "length": 25
   }
 ]
