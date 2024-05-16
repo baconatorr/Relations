@@ -14,6 +14,7 @@ let word0Id;
 let word1Id;
 let word2Id;
 let word3Id;
+let wordsCorrect = [];
 
 window.onload = () => {
     document.querySelector(".letter-display").innerText = current.join('');
@@ -24,15 +25,7 @@ window.onload = () => {
     let currentDate = new Date(`${month}/${day}/${year}`);
     let storedDate = localStorage.getItem('storedDate');
     if(currentDate == storedDate){
-        word0Id = localStorage.getItem("word0");
-        word0Id = JSON.parse(word0Id);
-        word1Id = localStorage.getItem("word1");
-        word1Id = JSON.parse(word1Id);
-        word2Id = localStorage.getItem("word2");
-        word2Id = JSON.parse(word2Id);
-        word3Id = localStorage.getItem("word3");
-        word3Id = JSON.parse(word3Id);
-        wordCount = localStorage.getItem('wordCount');
+        loadStoredData();
     } else {
         localStorage.setItem('storedDate', currentDate);
     }
@@ -45,7 +38,7 @@ function getDate() {
     let currentDate = new Date(`${month}/${day}/${year}`);
     let dateDisplay = document.getElementById('date');
     dateDisplay.innerText = `${month}/${day}/${year}`;
-    let compareDate = new Date("5/15/2024");
+    let compareDate = new Date("5/16/2024");
     let diffInTime = currentDate.getTime() - compareDate.getTime();
     let diffInDays = Math.round(diffInTime / (1000 * 3600 * 24));
     return diffInDays;
@@ -166,12 +159,13 @@ function submit() {
                 id.setAttribute("data-active", "true"); 
             }
             wordCount++;
+            wordsCorrect.push(i);
             celebrateVictory();
             addAnswer(i);
             setSave(i);
+            console.log(wordsCorrect)
             current = ["Enter a word"];
             document.querySelector(".letter-display").innerText = current.join('');
-            setSave(i);
             currentIds = [];
             lastClickedTile = null;
             return;
@@ -183,6 +177,7 @@ function submit() {
 
 function celebrateVictory() {
     if (wordCount === 4) {
+        alert("Congrats!")
         const canvas = document.querySelector("body");
         const jsConfetti = new JSConfetti();
         jsConfetti.addConfetti();
@@ -190,7 +185,7 @@ function celebrateVictory() {
 }
 
 function addAnswer(number){
-    let top = document.getElementById('top')
+    let top = document.querySelector('.answers')
     let div = document.createElement('div');
     div.className = "answer-display";
     div.id = "ans" + number;
@@ -226,9 +221,16 @@ function setSave(num){
             break;
     }
     localStorage.setItem('wordCount', wordCount);
+    localStorage.setItem('wordsCorrect', JSON.stringify(wordsCorrect));
 }
 
 function loadSave(){
+    wordsCorrect = JSON.parse(localStorage.getItem('wordsCorrect')) || [];
+    if (wordsCorrect) {
+        for (let i = 0; i < wordsCorrect.length; i++) {
+            addAnswer(wordsCorrect[i]);
+        }
+    }
     console.log(word0Id);
     if(word0Id != null){
         for (let j = 0; j < word0Id.length; j++) {
@@ -258,6 +260,15 @@ function loadSave(){
             id.setAttribute("data-active", "true"); 
         }
     }
+}
+
+function loadStoredData() {
+    wordsCorrect = JSON.parse(localStorage.getItem("wordsCorrect")) || [];
+    word0Id = JSON.parse(localStorage.getItem("word0")) || null;
+    word1Id = JSON.parse(localStorage.getItem("word1")) || null;
+    word2Id = JSON.parse(localStorage.getItem("word2")) || null;
+    word3Id = JSON.parse(localStorage.getItem("word3")) || null;
+    wordCount = parseInt(localStorage.getItem('wordCount'), 10) || 0;
 }
 
 function alert(text){

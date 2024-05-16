@@ -82,6 +82,11 @@ body{
   text-align: center;
 }
 
+.answers{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--grid-column-gap);
+}
 .letter-display,
 .answer-display{
   height: 30px;
@@ -175,6 +180,11 @@ body{
 }
 
 .bottom{
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons{
   padding: 10px;
   display: flex;
   justify-content: center;
