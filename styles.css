@@ -1,231 +1,49 @@
-:root{
-  --row-width: 0;
-  --button-font-size: 15px;
-  --button-width: 120px;
-  --button-height: 40px;
-  --header-font-size: 32px;
-  --tile-size: 150px;
-  --grid-column-gap: 8px;
-  --grid-row-gap: 10px;
-}
-
-.container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-body{
-  font-family: "Libre Franklin", Arial;
-}
-
-.header{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  color: rgb(0, 0, 0);
-  margin-bottom: 20px;
-  font-weight: 600;
-  border-bottom: 0.3vh black solid;
-}
-
-.alert {
-  height: 50px;
-  width: 150px;
-  background-color: rgb(65, 65, 64);
-  color: white;
-  position: absolute;
-  left: 50%; /* Horizontally center */
-  transform: translateX(-50%); /* Center with transform */
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
-  font-size: calc(var(--button-font-size) * 1.5);
-  border-radius: 5px;
-  opacity: 0;
-  margin: 0;
-  margin-left: -90px;
-}
-.middle{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.middle h1{
-  text-align: center;
-}
-
-.game{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
-
-.top{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-align: center;
-}
-
-.hint{
-  text-align: center;
-  font-weight: 600;
-  font-size: 25px;
-  text-align: center;
-}
-
-.answers{
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: var(--grid-column-gap);
-}
-.letter-display,
-.answer-display{
-  height: 30px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 25px;
-  color: rgb(65, 65, 64);
-}
-
-.grid{
-  display: grid;
-  grid-template-columns: repeat(var(--row-width), var(--tile-size));
-  column-gap: var(--grid-column-gap);
-  row-gap: var(--grid-row-gap);
-}
-
-.tile{
-  background-color: rgb(239, 239, 230);
-  height: 60px;
-  width: 120px;
-  border-radius: 10%;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tile{
-  font-weight: 500;
-  font-size: 35px;
-  transition: transform .15s, box-shadow .15s, background-color .15s;
-}
-
-.tile:hover{
-  transform: scale(105%);
-  box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.3);
-}
-
-.tile-active{
-  background-color: rgb(65, 65, 64);
-  color: white;
-  transform: scale(103%);
-  box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.3);
-}
-
-.tile-correct0{
-  background-color: #4CAF50;
-  color: white;
-  transform: scale(103%);
-  box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.3);
-}
-
-.tile-correct1{
-  background-color: #B39DDB ;
-  color: white;
-  transform: scale(103%);
-  box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.3);
-}
-
-.tile-correct2{
-  background-color: #FFC107 ;
-  color: white;
-  transform: scale(103%);
-  box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.3);
-}
-
-.tile-correct3{
-  background-color: #00BCD4 ;
-  color: white;
-  transform: scale(103%);
-  box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.3);
-}
-
-.answer-correct0{
-  color: #4CAF50;
-}
-
-.answer-correct1{
-  color: #B39DDB;
-}
-
-.answer-correct2{
-  color: #FFC107;
-}
-
-.answer-correct3{
-  color: #00BCD4;
-}
-
-.bottom{
-  display: flex;
-  flex-direction: column;
-}
-
-.buttons{
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 20%;
-}
-
-.bottom button{
-  font-family: "Libre Franklin", Arial;
-  font-size: var(--button-font-size);
-  width: var(--button-width);
-  height: var(--button-height);
-  background-color: white;
-  border: solid 1px black;
-  border-radius: 16px;
-}
-
-#lineCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1; /* Ensure the canvas is above the grid */
-}
-
-@keyframes fadeInDown {
-  0% {
-     opacity: 0;
-     transform: translateY(-20px);
-  }
-  100% {
-     opacity: 1;
-     transform: translateY(0);
-  }
-} 
-
-@keyframes fadeInUp {
-  0% {
-     opacity: 1;
-     transform: translateY(0px);
-  }
-  100% {
-     opacity: 0;
-     transform: translateY(-20);
-  }
-} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="link.png">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="left"></div>
+            <div class="middle">
+                <h1>Relations</h1>
+            </div>
+            <div class="right">
+            <h1 id="date"></h1>
+        </div>
+        </div>
+        <div class="game" id="game">
+            <div class="top" id="top">
+                <div class="alert">
+                
+                </div>
+                <div class="hint">
+                </div>
+                <div class="letter-display"></div>
+                <div class="answers"></div>
+            </div>
+            <canvas id="lineCanvas"></canvas>
+            <div class="grid">
+            </div>
+            <div class="bottom">
+                <div class="mistakes"></div>
+                <div class="buttons">
+                    <button id="submit" onclick="submit()">SUBMIT</button>
+                    <button id="reset" onclick="reset()">RESET</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+</body>
+</html>
