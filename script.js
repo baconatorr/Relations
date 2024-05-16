@@ -171,10 +171,8 @@ function submit() {
             celebrateVictory();
             addAnswer(i);
             setSave(i);
-            lastClickedTile = null;
-            current = ["Enter a word"];
             currentIds = [];
-            document.querySelector(".letter-display").innerText = current.join('');
+            reset();
             return;
         }
     }
