@@ -114,7 +114,7 @@ function activateLetter(tile) {
         return;
     }
     if(lastClickedTile == null){
-        current = [];
+        current = ["Enter a word"];
     }
     if (lastClickedTile == null || isNeighbor(lastClickedTile.id, tile.id)) {
         console.log("click");
