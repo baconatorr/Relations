@@ -246,13 +246,16 @@ body{
   :root{
     --header-font-size: 25px;
     --top-font-size: 15px;
-    --tile-size: 80px;
+    --tile-size: 70px;
     --grid-column-gap: 5px;
     --grid-row-gap: 10px;
     --header-font-size: 32px;
     --top-font-size: 15px;
   }
 
+  .tile{
+    height: 60px;
+  }
   .answers{
     height: 60px;
   }
