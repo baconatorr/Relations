@@ -173,6 +173,7 @@ function submit() {
             celebrateVictory();
             addAnswer(i);
             setSave(i);
+            current = ["Enter a word"];
             currentIds = [];
             reset();
             return;
