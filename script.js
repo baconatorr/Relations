@@ -106,7 +106,7 @@ function activateLetter(tile) {
             console.log(lastClickedTile);
             currentIds.pop();
             tile.classList.remove("tile-active");
-            tile.setAttribute("data-active", "false");\
+            tile.setAttribute("data-active", "false");
         }
         return;
     }
