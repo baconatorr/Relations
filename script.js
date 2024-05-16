@@ -118,7 +118,7 @@ function activateLetter(tile) {
         tile.setAttribute("data-active", "true"); 
         tile.classList.add("tile-active");
         clicked.push(tile);
-        current = current[0] = "Enter a word" ? [] : current;
+        current = current[0] == "Enter a word" ? [] : current;
         current.push(tile.innerText);
         currentIds.push(tile.id);
         console.log(currentIds)
