@@ -180,7 +180,6 @@ function submit() {
             return;
         }
     }
-     = ;
     alert('Invalid Word');
     console.log('Invalid word');
 }
