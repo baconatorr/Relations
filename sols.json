@@ -23,12 +23,12 @@
   },
   {
     "hint": "🎶",
-    "valid": ["note", "adagio", "compose", "baritone"],
+    "valid": ["beat", "adagio", "compose", "baritone"],
     "letters": [["B", "A", "R", "I", "T" ],
-                ["O", "N", "E", "N", "O"],
-                ["I", "G", "O", "T", "E"],
-                ["D", "A", "M", "P", "E"],
-                ["A", "C", "O", "O", "S"]
+                ["O", "T", "E", "N", "O"],
+                ["I", "G", "A", "E", "B"],
+                ["D", "A", "M", "P", "O"],
+                ["A", "C", "O", "E", "S"]
     ],
     "length": 25
   }

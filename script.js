@@ -104,6 +104,7 @@ function activateLetter(tile) {
         if(tile == lastClickedTile){
             current.pop();
             currentIds.pop();
+            current = current.length > 0 ? current : ["Enter a word"]
             document.querySelector(".letter-display").innerText = current.join('');
             tile.classList.remove("tile-active");
             tile.setAttribute("data-active", "false");
@@ -139,7 +140,7 @@ function isNeighbor(lastId, currentId) {
 
     const rowDiff = Math.abs(lastRow - currentRow);
     const colDiff = Math.abs(lastCol - currentCol);
-    return (rowDiff <= 1 && colDiff <= 1);
+    return (rowDiff <= 1 && colDiff <= 1 && (lastId != currentId));
 }
 
 function reset(){
@@ -148,11 +149,10 @@ function reset(){
         id.classList.remove("tile-active");
         id.setAttribute("data-active", "false"); 
     }
+    lastClickedTile = null;
     current = ["Enter a word"];
     currentIds = [];
     document.querySelector(".letter-display").innerText = current.join('');
-    lastClickedTile = null;
-
 }
 
 function submit() {

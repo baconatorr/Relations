@@ -3,6 +3,10 @@
   --button-font-size: 15px;
   --button-width: 90px;
   --button-height: 30px;
+  --header-font-size: 32px;
+  --tile-size: 150px;
+  --grid-column-gap: 8px;
+  --grid-row-gap: 10px;
 }
 
 .container{
@@ -67,9 +71,9 @@ body{
 
 .grid{
   display: grid;
-  grid-template-columns: repeat(var(--row-width), 150px);
-  column-gap: 8px;
-  row-gap: 10px;
+  grid-template-columns: repeat(var(--row-width), var(--tile-size));
+  column-gap: var(--grid-column-gap);
+  row-gap: var(--grid-row-gap);
 }
 
 .tile{
