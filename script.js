@@ -102,7 +102,10 @@ function activateLetter(tile) {
             tile.setAttribute("data-active", "false");
             current.pop();
             currentIds.pop();
-            current = current.length > 0 ? current : ["Enter a word"]
+            if(current.length > 0){
+            } else {
+                reset();
+            }
             document.querySelector(".letter-display").innerText = current.join('');
             tile.classList.remove("tile-active");
             clicked.pop();
