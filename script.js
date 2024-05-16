@@ -173,15 +173,16 @@ function submit() {
             celebrateVictory();
             addAnswer(i);
             setSave(i);
-            current = ["Enter a word"];
             lastClickedTile = null;
+            current = ["Enter a word"];
             currentIds = [];
-            reset();
+            document.querySelector(".letter-display").innerText = current.join(''); 
             return;
         }
     }
     alert('Invalid Word');
     console.log('Invalid word');
+    reset(); 
 }
 
 function celebrateVictory() {
