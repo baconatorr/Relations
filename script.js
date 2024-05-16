@@ -1,5 +1,3 @@
-
-
 let hint;
 let valid;
 let letters;
@@ -22,7 +20,7 @@ window.onload = () => {
     const day = new Date().getDate();
     const month = new Date().getMonth() + 1;
     const year = new Date().getFullYear();
-    let currentDate = new Date(`${month}/${day}/${year}`);
+    let currentDate = new Date(`${month}/${day + 2}/${year}`);
     let storedDate = localStorage.getItem('storedDate');
     if(currentDate == storedDate){
         loadStoredData();
@@ -45,7 +43,7 @@ function getDate() {
     let currentDate = new Date(`${month}/${day}/${year}`);
     let dateDisplay = document.getElementById('date');
     dateDisplay.innerText = `${month}/${day}/${year}`;
-    let compareDate = new Date("5/16/2024");
+    let compareDate = new Date("5/14/2024");
     let diffInTime = currentDate.getTime() - compareDate.getTime();
     let diffInDays = Math.round(diffInTime / (1000 * 3600 * 24));
     return diffInDays;
@@ -139,7 +137,11 @@ function isNeighbor(lastId, currentId) {
 
     const rowDiff = Math.abs(lastRow - currentRow);
     const colDiff = Math.abs(lastCol - currentCol);
-    return (rowDiff <= 1 && colDiff <= 1 && (lastId != currentId));
+    let william = rowDiff <= 1 && colDiff <= 1 && (lastId != currentId);
+    if(!william){
+        alert('Out of range');
+    }
+    return william;
 }
 
 function reset(){
@@ -170,14 +172,14 @@ function submit() {
             celebrateVictory();
             addAnswer(i);
             setSave(i);
-            console.log(wordsCorrect)
-            current = ["Enter a word"];
-            document.querySelector(".letter-display").innerText = current.join('');
-            currentIds = [];
             lastClickedTile = null;
+            current = ["Enter a word"];
+            currentIds = [];
+            document.querySelector(".letter-display").innerText = current.join('');
             return;
         }
     }
+    lastClickedTile = lastClickedTile;
     alert('Invalid Word');
     console.log('Invalid word');
 }
