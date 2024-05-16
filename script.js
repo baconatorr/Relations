@@ -20,7 +20,7 @@ window.onload = () => {
     const day = new Date().getDate();
     const month = new Date().getMonth() + 1;
     const year = new Date().getFullYear();
-    let currentDate = new Date(`${month}/${day + 1}/${year}`);
+    let currentDate = new Date(`${month}/${day}/${year}`);
     let storedDate = localStorage.getItem('storedDate');
     if(currentDate == storedDate){
         loadStoredData();
