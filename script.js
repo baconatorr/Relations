@@ -27,7 +27,14 @@ window.onload = () => {
     if(currentDate == storedDate){
         loadStoredData();
     } else {
+        localStorage.clear();
         localStorage.setItem('storedDate', currentDate);
+        word0Id = [];
+        word1Id = [];
+        word2Id = [];
+        word3Id = [];
+        wordCount = [];
+        wordsCorrect = [];
     }
 };
 
