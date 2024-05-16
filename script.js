@@ -10,11 +10,33 @@ let currentIds = [];
 let clicked = [];
 let rowWidth;
 let wordCount = 0;
+let word0Id;
+let word1Id;
+let word2Id;
+let word3Id;
 
 
 window.onload = () => {
     document.querySelector(".letter-display").innerText = current.join('');
     loadSolution();
+    const day = new Date().getDate();
+    const month = new Date().getMonth() + 1;
+    const year = new Date().getFullYear();
+    let currentDate = new Date(`${month}/${day}/${year}`);
+    let storedDate = localStorage.getItem('storedDate');
+    if(currentDate == storedDate){
+        word0Id = localStorage.getItem("word0");
+        word0Id = JSON.parse(word0Id);
+        word1Id = localStorage.getItem("word1");
+        word1Id = JSON.parse(word1Id);
+        word2Id = localStorage.getItem("word2");
+        word2Id = JSON.parse(word2Id);
+        word3Id = localStorage.getItem("word3");
+        word3Id = JSON.parse(word3Id);
+        wordCount = localStorage.getItem('wordCount');
+    } else {
+        localStorage.setItem('storedDate', currentDate);
+    }
 };
 
 function getDate() {
@@ -24,7 +46,7 @@ function getDate() {
     let currentDate = new Date(`${month}/${day}/${year}`);
     let dateDisplay = document.getElementById('date');
     dateDisplay.innerText = `${month}/${day}/${year}`;
-    let compareDate = new Date("5/14/2024");
+    let compareDate = new Date("5/15/2024");
     let diffInTime = currentDate.getTime() - compareDate.getTime();
     let diffInDays = Math.round(diffInTime / (1000 * 3600 * 24));
     return diffInDays;
@@ -74,6 +96,7 @@ function loadGrid() {
             activateLetter(grid);
         });
     });
+    loadSave();
 }
 
 function activateLetter(tile) {
@@ -146,9 +169,11 @@ function submit() {
             wordCount++;
             celebrateVictory();
             addAnswer(i);
+            setSave(i);
             current = ["Enter a word"];
-            currentIds = [];
             document.querySelector(".letter-display").innerText = current.join('');
+            setSave(i);
+            currentIds = [];
             lastClickedTile = null;
             return;
         }
@@ -176,3 +201,61 @@ function addAnswer(number){
     display.classList.add("answer-correct" + number)
 }
 
+function setSave(num){
+    console.log("saved");
+    switch(num){
+        case 0:
+            word0Id = currentIds;
+            word0Id = JSON.stringify(word0Id);
+            localStorage.setItem('word0', word0Id);
+            break;
+        case 1:
+            word1Id = currentIds;
+            word1Id = JSON.stringify(word1Id);
+            localStorage.setItem('word1', word1Id);
+            break;
+        case 2:
+            word2Id = currentIds;
+            word2Id = JSON.stringify(word2Id);
+            localStorage.setItem('word2', word2Id);
+            break;
+        case 3:
+            word3Id = currentIds;
+            word3Id = JSON.stringify(word3Id);
+            localStorage.setItem('word3', word3Id);
+            break;
+    }
+    localStorage.setItem('wordCount', wordCount);
+}
+
+function loadSave(){
+    console.log(word0Id);
+    if(word0Id != null){
+        for (let j = 0; j < word0Id.length; j++) {
+            let id = document.getElementById(word0Id[j]);
+            id.classList.add("tile-correct" + 0);
+            id.setAttribute("data-active", "true"); 
+        }
+    }
+    if(word1Id != null){
+        for (let j = 0; j < word1Id.length; j++) {
+            let id = document.getElementById(word1Id[j]);
+            id.classList.add("tile-correct" + 1);
+            id.setAttribute("data-active", "true"); 
+        }
+    }
+    if(word2Id != null){
+        for (let j = 0; j < word2Id.length; j++) {
+            let id = document.getElementById(word2Id[j]);
+            id.classList.add("tile-correct" + 2);
+            id.setAttribute("data-active", "true"); 
+        }
+    }
+    if(word3Id != null){
+        for (let j = 0; j < word3Id.length; j++) {
+            let id = document.getElementById(word3Id[j]);
+            id.classList.add("tile-correct" + 3);
+            id.setAttribute("data-active", "true"); 
+        }
+    }
+}
