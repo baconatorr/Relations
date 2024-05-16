@@ -99,12 +99,12 @@ function loadGrid() {
 function activateLetter(tile) {
     if (tile.getAttribute("data-active") == "true") {
         if(tile == lastClickedTile){
+            tile.setAttribute("data-active", "false");
             current.pop();
             currentIds.pop();
             current = current.length > 0 ? current : ["Enter a word"]
             document.querySelector(".letter-display").innerText = current.join('');
             tile.classList.remove("tile-active");
-            tile.setAttribute("data-active", "false");
             clicked.pop();
             lastClickedTile = clicked.length > 0 ? clicked[clicked.length - 1] : null
         }
