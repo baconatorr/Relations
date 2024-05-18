@@ -83,12 +83,13 @@ body{
   flex-direction: column;
   gap: 10px;
   text-align: center;
+  font-size: var(--top-font-size);
 }
 
 .hint{
   text-align: center;
   font-weight: 600;
-  font-size: 25px;
+  font-size: var(--top-font-size);;
   text-align: center;
 }
 
