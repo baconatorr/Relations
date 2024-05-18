@@ -106,7 +106,7 @@ function activateLetter(tile) {
             }
             current.pop();
             clicked.pop();
-            lastClickedTile = clicked.length > 0 ? clicked[clicked.length - 1] : null;
+            lastClickedTile =  clicked[clicked.length - 1];
             currentIds.pop();
             tile.classList.remove("tile-active");
             tile.setAttribute("data-active", "false");
