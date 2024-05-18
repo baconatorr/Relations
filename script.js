@@ -289,7 +289,7 @@ function loadStoredData() {
     word2Id = JSON.parse(localStorage.getItem("word2")) || null;
     word3Id = JSON.parse(localStorage.getItem("word3")) || null;
     wordCount = parseInt(localStorage.getItem('wordCount'), 10) || 0;
-    currentActive = localStorage.getItem('currentActive);
+    currentActive = localStorage.getItem('currentActive');
 }
 
 function alert(text){
