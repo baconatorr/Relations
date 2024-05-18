@@ -106,6 +106,7 @@ function activateLetter(tile) {
                 reset();
             }
             current.pop();
+            document.querySelector(".letter-display").innerText = current.join('');
             clicked.pop();
             lastClickedTile =  clicked[clicked.length - 1];
             currentIds.pop();
