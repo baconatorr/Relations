@@ -13,6 +13,7 @@ let word1Id;
 let word2Id;
 let word3Id;
 let wordsCorrect = [];
+let currentActive = 0;
 
 window.onload = () => {
     document.querySelector(".letter-display").innerText = current.join('');
@@ -99,6 +100,10 @@ function loadGrid() {
 function activateLetter(tile) {
     if (tile.getAttribute("data-active") == "true") {
         if (tile == lastClickedTile) {
+            currentActive--;
+            if(currentActive == 0{
+                reset();
+            }
             current.pop();
             clicked.pop();
             lastClickedTile = clicked.length > 0 ? clicked[clicked.length - 1] : null;
@@ -114,6 +119,7 @@ function activateLetter(tile) {
         current = [];
     }
     if (lastClickedTile == null || isNeighbor(lastClickedTile.id, tile.id)) {
+        currentActive++;
         tile.setAttribute("data-active", "true");
         tile.classList.add("tile-active");
         clicked.push(tile);
@@ -149,6 +155,7 @@ function reset(){
         id.classList.remove("tile-active");
         id.setAttribute("data-active", "false"); 
     }
+    currentActive = 0;
     lastClickedTile = null;
     current = ["Enter a word"];
     currentIds = [];
@@ -166,6 +173,7 @@ function submit() {
                 id.classList.add("tile-correct" + i);
                 id.setAttribute("data-active", "true"); 
             }
+            currentActive = 0;
             wordCount++;
             wordsCorrect.push(i);
             celebrateVictory();
