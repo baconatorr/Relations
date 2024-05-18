@@ -101,6 +101,7 @@ function activateLetter(tile) {
     if (tile.getAttribute("data-active") == "true") {
         if (tile == lastClickedTile) {
             currentActive--;
+            localStorage.setItem("currentActive", currentActive);
             if(currentActive == 0){
                 reset();
             }
@@ -120,6 +121,7 @@ function activateLetter(tile) {
     }
     if (lastClickedTile == null || isNeighbor(lastClickedTile.id, tile.id)) {
         currentActive++;
+        localStorage.setItem("currentActive", currentActive);
         tile.setAttribute("data-active", "true");
         tile.classList.add("tile-active");
         clicked.push(tile);
@@ -156,6 +158,7 @@ function reset(){
         id.setAttribute("data-active", "false"); 
     }
     currentActive = 0;
+    localStorage.setItem("currentActive", currentActive);
     lastClickedTile = null;
     current = ["Enter a word"];
     currentIds = [];
@@ -174,6 +177,7 @@ function submit() {
                 id.setAttribute("data-active", "true"); 
             }
             currentActive = 0;
+            localStorage.setItem("currentActive", currentActive);
             wordCount++;
             wordsCorrect.push(i);
             celebrateVictory();
@@ -285,6 +289,7 @@ function loadStoredData() {
     word2Id = JSON.parse(localStorage.getItem("word2")) || null;
     word3Id = JSON.parse(localStorage.getItem("word3")) || null;
     wordCount = parseInt(localStorage.getItem('wordCount'), 10) || 0;
+    currentActive = localStorage.getItem('currentActive);
 }
 
 function alert(text){
