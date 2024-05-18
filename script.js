@@ -107,6 +107,8 @@ function activateLetter(tile) {
             currentIds.pop();
             tile.classList.remove("tile-active");
             tile.setAttribute("data-active", "false");
+            // Remove the ID of the deselected tile from the currentIds array
+            currentIds = currentIds.filter(id => id !== tile.id);
         }
         return;
     }
