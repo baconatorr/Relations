@@ -105,6 +105,7 @@ function activateLetter(tile) {
             if(currentActive == 0){
                 reset();
             }
+            current = (document.querySelector(".letter-display").innerText).split();
             current.pop();
             document.querySelector(".letter-display").innerText = current.join('');
             clicked.pop();
