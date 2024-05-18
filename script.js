@@ -101,7 +101,7 @@ function activateLetter(tile) {
     if (tile.getAttribute("data-active") == "true") {
         if (tile == lastClickedTile) {
             currentActive--;
-            if(currentActive == 0{
+            if(currentActive == 0){
                 reset();
             }
             current.pop();
