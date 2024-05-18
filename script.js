@@ -98,12 +98,10 @@ function loadGrid() {
 
 function activateLetter(tile) {
     if (tile.getAttribute("data-active") == "true") {
-        if(tile == lastClickedTile){
-            console.log(lastClickedTile);
+        if (tile == lastClickedTile) {
             current.pop();
             clicked.pop();
             lastClickedTile = clicked.length > 0 ? clicked[clicked.length - 1] : null;
-            console.log(lastClickedTile);
             currentIds.pop();
             tile.classList.remove("tile-active");
             tile.setAttribute("data-active", "false");
@@ -112,23 +110,21 @@ function activateLetter(tile) {
         }
         return;
     }
-    if(lastClickedTile == null){
+    if (lastClickedTile == null) {
         current = [];
     }
     if (lastClickedTile == null || isNeighbor(lastClickedTile.id, tile.id)) {
-        console.log("click");
-        tile.setAttribute("data-active", "true"); 
+        tile.setAttribute("data-active", "true");
         tile.classList.add("tile-active");
         clicked.push(tile);
         current = current.includes("Enter a word") ? [] : current;
         current.push(tile.innerText);
         currentIds.push(tile.id);
-        console.log(currentIds)
-        lastClickedTile = clicked[clicked.length -1];
+        lastClickedTile = clicked[clicked.length - 1];
         document.querySelector(".letter-display").innerText = current.join('');
-        console.log(current);
     }
 }
+
 
 function isNeighbor(lastId, currentId) {
     lastId = parseInt(lastId);
