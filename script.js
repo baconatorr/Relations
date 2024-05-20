@@ -163,6 +163,7 @@ function reset(){
     localStorage.setItem("currentActive", currentActive);
     lastClickedTile = null;
     current = ["Enter a word"];
+    console.log(current);
     currentIds = [];
     document.querySelector(".letter-display").innerText = current.join('');
 }
@@ -195,7 +196,6 @@ function submit() {
     }
     alert('Invalid Word');
     console.log('Invalid word');
-    reset(); 
 }
 
 function celebrateVictory() {
