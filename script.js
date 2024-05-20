@@ -314,22 +314,22 @@ function loadSave(){
         wordsCorrect = [];
     }
     try {
-        word0Id = JSON.parse(localStorage.getItem("word0")) || [];
+        word0Id = JSON.parse(localStorage.getItem('word0')) || [];
     } catch (e) {
         word0Id = [];
     }
     try {
-        word1Id = JSON.parse(localStorage.getItem("word1")) || [];
+        word1Id = JSON.parse(localStorage.getItem('word1')) || [];
     } catch (e) {
         word1Id = [];
     }
     try {
-        word2Id = JSON.parse(localStorage.getItem("word2")) || [];
+        word2Id = JSON.parse(localStorage.getItem('word2')) || [];
     } catch (e) {
         word2Id = [];
     }
     try {
-        word3Id = JSON.parse(localStorage.getItem("word3")) || [];
+        word3Id = JSON.parse(localStorage.getItem('word3')) || [];
     } catch (e) {
         word3Id = [];
     }
