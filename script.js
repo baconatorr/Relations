@@ -115,6 +115,7 @@ function activateLetter(tile) {
             currentIds.pop();
             tile.classList.remove("tile-active");
             tile.setAttribute("data-active", "false");
+            console.log(current);
         }
         return;
     }
@@ -127,9 +128,10 @@ function activateLetter(tile) {
         localStorage.setItem("currentActive", currentActive);
         tile.setAttribute("data-active", "true");
         tile.classList.add("tile-active");
-        clicked.push(tile);
         current = current.includes("Enter a word") ? [] : current;
+        clicked.push(tile);
         current.push(tile.innerText);
+        console.log(current);
         currentIds.push(tile.id);
         lastClickedTile = clicked[clicked.length - 1];
         document.querySelector(".letter-display").innerText = current.join('');
