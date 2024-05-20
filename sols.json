@@ -34,7 +34,7 @@
   },
    {
     "hint": "Summer Weather",
-    "valid": ["heat", "burning", "sweating", "toast"],
+    "valid": ["heat", "burning", "sweating", "toasty"],
     "letters": [["B", "N", "I", "S", "W" ],
                 ["U", "R", "N", "G", "E"],
                 ["T", "Y", "E", "H", "A"],
