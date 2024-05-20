@@ -307,7 +307,6 @@ function loadSave(){
     }
 }
 
-function loadStoredData() {
    function loadStoredData() {
     try {
         wordsCorrect = JSON.parse(localStorage.getItem("wordsCorrect")) || [];
@@ -344,9 +343,6 @@ function loadStoredData() {
     } catch (e) {
         currentActive = 0;
     }
-}
-
-
 }
 
 function alert(text){
