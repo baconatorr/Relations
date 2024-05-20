@@ -14,6 +14,9 @@ let word2Id;
 let word3Id;
 let wordsCorrect = [];
 let currentActive = 0;
+let wins = parseInt(localStorage.getItem('wins')) || 0; 
+let matches = parseInt(localStorage.getItem('matches')) || 0; 
+
 
 window.onload = () => {
     currentActive = 0;
@@ -27,7 +30,6 @@ window.onload = () => {
     if(currentDate == storedDate){
         loadStoredData();
     } else {
-        localStorage.clear();
         localStorage.setItem('storedDate', currentDate);
         word0Id = [];
         word1Id = [];
@@ -35,7 +37,23 @@ window.onload = () => {
         word3Id = [];
         wordCount = [];
         wordsCorrect = [];
+        localStorage.setItem('word0', word0Id);
+        localStorage.setItem('word1', word1Id);
+        localStorage.setItem('word2', word2Id);
+        localStorage.setItem('word3', word3Id);
+        localStorage.setItem('wordCount', wordCount);
+        localStorage.setItem('wordsCorrect', JSON.stringify(wordsCorrect));
     }
+    if (!localStorage.getItem('visited')) {
+   
+     openModal('modal')
+     localStorage.setItem('wins', 0);
+     localStorage.setItem('matches', 0);
+     localStorage.setItem('visited', 'true');
+   }
+
+   wins = parseInt(localStorage.getItem('wins')) || 0; 
+   matches = parseInt(localStorage.getItem('matches')) || 0; 
 };
 
 function getDate() {
@@ -308,3 +326,14 @@ function alert(text){
     setTimeout(() => { alert.style.animation = 'fadeInUp 1s ease'; }, 1000);
     alert.style.opacity = 0;
 }
+
+function openModal(id){
+    let modal = document.getElementById(id);
+    modal.showModal();
+}
+
+function closeModal(id){
+    let modal = document.getElementById(id);
+    modal.close();
+}
+
