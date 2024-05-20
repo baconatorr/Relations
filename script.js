@@ -102,41 +102,51 @@ function activateLetter(tile) {
     if (tile.getAttribute("data-active") == "true") {
         if (tile == lastClickedTile) {
             currentActive--;
-            console.log(currentActive);
             localStorage.setItem("currentActive", currentActive);
             if(currentActive == 0){
                 reset();
+            } else {
+                current.pop();  // Remove the last letter
+                document.querySelector(".letter-display").innerText = current.join('');
+                clicked.pop();
+                lastClickedTile = clicked[clicked.length - 1];
+                currentIds.pop();
+                tile.classList.remove("tile-active");
+                tile.setAttribute("data-active", "false");
             }
-            current = (document.querySelector(".letter-display").innerText).split();
-            current.pop();
-            document.querySelector(".letter-display").innerText = current.join('');
-            clicked.pop();
-            lastClickedTile =  clicked[clicked.length - 1];
-            currentIds.pop();
-            tile.classList.remove("tile-active");
-            tile.setAttribute("data-active", "false");
-            console.log(current);
+            return;
         }
-        return;
-    }
-    if(current = ["Enter a word"]){
-        lastClickedTile = null;
     }
     if (lastClickedTile == null || isNeighbor(lastClickedTile.id, tile.id)) {
         currentActive++;
-        console.log(currentActive);
         localStorage.setItem("currentActive", currentActive);
         tile.setAttribute("data-active", "true");
         tile.classList.add("tile-active");
-        current = current.includes("Enter a word") ? [] : current;
+        if (current.includes("Enter a word")) {
+            current = [];  // Reset to an empty array if it was initially the placeholder
+        }
         clicked.push(tile);
         current.push(tile.innerText);
-        console.log(current);
         currentIds.push(tile.id);
-        lastClickedTile = clicked[clicked.length - 1];
+        lastClickedTile = tile;
         document.querySelector(".letter-display").innerText = current.join('');
     }
 }
+
+function reset(){
+    for(let i = 0; i < currentIds.length; i++){
+        let id = document.getElementById(currentIds[i]);
+        id.classList.remove("tile-active");
+        id.setAttribute("data-active", "false"); 
+    }
+    currentActive = 0;
+    localStorage.setItem("currentActive", currentActive);
+    lastClickedTile = null;
+    current = ["Enter a word"];
+    currentIds = [];
+    document.querySelector(".letter-display").innerText = current.join('');
+}
+
 
 
 function isNeighbor(lastId, currentId) {
@@ -154,22 +164,6 @@ function isNeighbor(lastId, currentId) {
         alert('Out of range');
     }
     return william;
-}
-
-function reset(){
-    for(let i = 0; i < currentIds.length; i++){
-        let id = document.getElementById(currentIds[i]);
-        id.classList.remove("tile-active");
-        id.setAttribute("data-active", "false"); 
-    }
-    currentActive = 0;
-    console.log(currentActive);
-    localStorage.setItem("currentActive", currentActive);
-    lastClickedTile = null;
-    current = ["Enter a word"];
-    console.log(current);
-    currentIds = [];
-    document.querySelector(".letter-display").innerText = current.join('');
 }
 
 function submit() {
