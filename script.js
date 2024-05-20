@@ -16,6 +16,7 @@ let wordsCorrect = [];
 let currentActive = 0;
 
 window.onload = () => {
+    currentActive = 0;
     document.querySelector(".letter-display").innerText = current.join('');
     loadSolution();
     const day = new Date().getDate();
