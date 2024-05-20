@@ -32,4 +32,15 @@
     ],
     "length": 25
   }
+   {
+    "hint": "Summer Weather",
+    "valid": ["heat", "burning", "sweating", "toast"],
+    "letters": [["B", "N", "I", "S", "W" ],
+                ["U", "R", "N", "G", "E"],
+                ["T", "Y", "E", "H", "A"],
+                ["S", "T", "A", "G", "T"],
+                ["A", "O", "T", "N", "I"]
+    ],
+    "length": 25
+  }
 ]
