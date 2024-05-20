@@ -44,7 +44,7 @@ function getDate() {
     let currentDate = new Date(`${month}/${day}/${year}`);
     let dateDisplay = document.getElementById('date');
     dateDisplay.innerText = `${month}/${day}`;
-    let compareDate = new Date("5/16/2024");
+    let compareDate = new Date("5/17/2024");
     let diffInTime = currentDate.getTime() - compareDate.getTime();
     let diffInDays = Math.round(diffInTime / (1000 * 3600 * 24));
     return diffInDays;
