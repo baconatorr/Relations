@@ -308,13 +308,45 @@ function loadSave(){
 }
 
 function loadStoredData() {
-    wordsCorrect = JSON.parse(localStorage.getItem("wordsCorrect")) || [];
-    word0Id = JSON.parse(localStorage.getItem("word0")) || null;
-    word1Id = JSON.parse(localStorage.getItem("word1")) || null;
-    word2Id = JSON.parse(localStorage.getItem("word2")) || null;
-    word3Id = JSON.parse(localStorage.getItem("word3")) || null;
-    wordCount = parseInt(localStorage.getItem('wordCount'), 10) || 0;
-    currentActive = localStorage.getItem('currentActive');
+   function loadStoredData() {
+    try {
+        wordsCorrect = JSON.parse(localStorage.getItem("wordsCorrect")) || [];
+    } catch (e) {
+        wordsCorrect = [];
+    }
+    try {
+        word0Id = JSON.parse(localStorage.getItem("word0")) || [];
+    } catch (e) {
+        word0Id = [];
+    }
+    try {
+        word1Id = JSON.parse(localStorage.getItem("word1")) || [];
+    } catch (e) {
+        word1Id = [];
+    }
+    try {
+        word2Id = JSON.parse(localStorage.getItem("word2")) || [];
+    } catch (e) {
+        word2Id = [];
+    }
+    try {
+        word3Id = JSON.parse(localStorage.getItem("word3")) || [];
+    } catch (e) {
+        word3Id = [];
+    }
+    try {
+        wordCount = parseInt(localStorage.getItem('wordCount'), 10) || 0;
+    } catch (e) {
+        wordCount = 0;
+    }
+    try {
+        currentActive = parseInt(localStorage.getItem('currentActive'), 10) || 0;
+    } catch (e) {
+        currentActive = 0;
+    }
+}
+
+
 }
 
 function alert(text){
