@@ -117,14 +117,14 @@ function loadGrid() {
 }
 
 function activateLetter(tile) {
-    if(tile.getAttribute("data-active") == "correct"){
-      return;
+    if (tile.getAttribute("data-active") == "correct") {
+        return;
     }
     if (tile.getAttribute("data-active") == "true") {
         if (tile == lastClickedTile) {
             currentActive--;
             localStorage.setItem("currentActive", currentActive);
-            if(currentActive == 0){
+            if (currentActive == 0) {
                 reset();
             } else {
                 current.pop();  // Remove the last letter
@@ -135,6 +135,8 @@ function activateLetter(tile) {
                 tile.classList.remove("tile-active");
                 tile.setAttribute("data-active", "false");
             }
+            return;
+        } else {
             return;
         }
     }
@@ -153,6 +155,7 @@ function activateLetter(tile) {
         document.querySelector(".letter-display").innerText = current.join('');
     }
 }
+
 
 function reset(){
     for(let i = 0; i < currentIds.length; i++){
