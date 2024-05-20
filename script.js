@@ -121,7 +121,7 @@ function activateLetter(tile) {
     if(current = ["Enter a word"]){
         lastClickedTile = null;
     }
-    if (lastClickedTile == null || isNeighbor(lastClickedTile.id, tile.id) ||) {
+    if (lastClickedTile == null || isNeighbor(lastClickedTile.id, tile.id)) {
         currentActive++;
         console.log(currentActive);
         localStorage.setItem("currentActive", currentActive);
