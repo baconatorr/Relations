@@ -1,4 +1,4 @@
-let hint;
+ let hint;
 let valid;
 let letters;
 let length;
@@ -115,12 +115,13 @@ function activateLetter(tile) {
             currentIds.pop();
             tile.classList.remove("tile-active");
             tile.setAttribute("data-active", "false");
-            // Remove the ID of the deselected tile from the currentIds array
-            currentIds = currentIds.filter(id => id !== tile.id);
         }
         return;
     }
-    if (lastClickedTile == null || isNeighbor(lastClickedTile.id, tile.id)) {
+    if(current = ["Enter a word"]){
+        lastClickedTile = null;
+    }
+    if (lastClickedTile == null || isNeighbor(lastClickedTile.id, tile.id) ||) {
         currentActive++;
         console.log(currentActive);
         localStorage.setItem("currentActive", currentActive);
