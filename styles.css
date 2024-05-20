@@ -315,3 +315,14 @@ dialog button {
 dialog button:hover {
   background-color: #0056b3;
 }
+
+#welcome{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+#welcome img{
+  height: 40px;
+}
