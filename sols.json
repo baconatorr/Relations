@@ -37,9 +37,9 @@
     "valid": ["heat", "burning", "sweating", "toasty"],
     "letters": [["B", "N", "I", "S", "W" ],
                 ["U", "R", "N", "G", "E"],
-                ["T", "Y", "E", "H", "A"],
-                ["S", "T", "A", "G", "T"],
-                ["A", "O", "T", "N", "I"]
+                ["T", "O", "E", "H", "A"],
+                ["S", "A", "A", "T", "T"],
+                ["T", "Y", "G", "N", "I"]
     ],
     "length": 25
   }
