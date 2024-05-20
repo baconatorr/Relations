@@ -99,6 +99,9 @@ function loadGrid() {
 }
 
 function activateLetter(tile) {
+    if(tile.getAttribute("data-active") == "correct"){
+      return;
+    }
     if (tile.getAttribute("data-active") == "true") {
         if (tile == lastClickedTile) {
             currentActive--;
@@ -175,7 +178,7 @@ function submit() {
             for (let j = 0; j < currentIds.length; j++) {
                 let id = document.getElementById(currentIds[j]);
                 id.classList.add("tile-correct" + i);
-                id.setAttribute("data-active", "true"); 
+                id.setAttribute("data-active", "correct"); 
             }
             currentActive = 0;
             console.log(currentActive);
@@ -257,28 +260,28 @@ function loadSave(){
         for (let j = 0; j < word0Id.length; j++) {
             let id = document.getElementById(word0Id[j]);
             id.classList.add("tile-correct" + 0);
-            id.setAttribute("data-active", "true"); 
+            id.setAttribute("data-active", "correct"); 
         }
     }
     if(word1Id != null){
         for (let j = 0; j < word1Id.length; j++) {
             let id = document.getElementById(word1Id[j]);
             id.classList.add("tile-correct" + 1);
-            id.setAttribute("data-active", "true"); 
+            id.setAttribute("data-active", "correct"); 
         }
     }
     if(word2Id != null){
         for (let j = 0; j < word2Id.length; j++) {
             let id = document.getElementById(word2Id[j]);
             id.classList.add("tile-correct" + 2);
-            id.setAttribute("data-active", "true"); 
+            id.setAttribute("data-active", "correct"); 
         }
     }
     if(word3Id != null){
         for (let j = 0; j < word3Id.length; j++) {
             let id = document.getElementById(word3Id[j]);
             id.classList.add("tile-correct" + 3);
-            id.setAttribute("data-active", "true"); 
+            id.setAttribute("data-active", "correct"); 
         }
     }
 }
