@@ -31,7 +31,7 @@
                 ["A", "C", "O", "E", "S"]
     ],
     "length": 25
-  }
+  },
    {
     "hint": "Summer Weather",
     "valid": ["heat", "burning", "sweating", "toast"],
