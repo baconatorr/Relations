@@ -267,3 +267,51 @@ body{
   }
   
 }
+
+dialog {
+  background-color: #1a1a1b;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 70%; /* Adjust width */
+  max-width: 500px; /* Add max-width to prevent excessive width */
+  max-height: 70vh; /* Adjust max-height */
+  overflow: auto;
+}
+
+dialog h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+dialog h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+dialog p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+dialog img {
+  max-width: 100%;
+  height: auto;
+  object-fit: scale-down;
+  display: block;
+}
+
+dialog button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+dialog button:hover {
+  background-color: #0056b3;
+}
