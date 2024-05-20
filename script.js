@@ -101,6 +101,7 @@ function activateLetter(tile) {
     if (tile.getAttribute("data-active") == "true") {
         if (tile == lastClickedTile) {
             currentActive--;
+            console.log(currentActive);
             localStorage.setItem("currentActive", currentActive);
             if(currentActive == 0){
                 reset();
@@ -118,11 +119,9 @@ function activateLetter(tile) {
         }
         return;
     }
-    if (lastClickedTile == null) {
-        current = [];
-    }
     if (lastClickedTile == null || isNeighbor(lastClickedTile.id, tile.id)) {
         currentActive++;
+        console.log(currentActive);
         localStorage.setItem("currentActive", currentActive);
         tile.setAttribute("data-active", "true");
         tile.classList.add("tile-active");
@@ -160,6 +159,7 @@ function reset(){
         id.setAttribute("data-active", "false"); 
     }
     currentActive = 0;
+    console.log(currentActive);
     localStorage.setItem("currentActive", currentActive);
     lastClickedTile = null;
     current = ["Enter a word"];
@@ -179,6 +179,7 @@ function submit() {
                 id.setAttribute("data-active", "true"); 
             }
             currentActive = 0;
+            console.log(currentActive);
             localStorage.setItem("currentActive", currentActive);
             wordCount++;
             wordsCorrect.push(i);
