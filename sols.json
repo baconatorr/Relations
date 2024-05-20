@@ -35,11 +35,11 @@
    {
     "hint": "Summer Weather",
     "valid": ["heat", "burning", "sweating", "toasty"],
-    "letters": [["B", "N", "I", "S", "W" ],
+    "letters": [["B", "N", "I", "T", "A" ],
                 ["U", "R", "N", "G", "E"],
-                ["T", "O", "E", "H", "A"],
-                ["S", "A", "A", "T", "T"],
-                ["T", "Y", "G", "N", "I"]
+                ["S", "Y", "T", "S", "H"],
+                ["W", "I", "N", "A", "T"],
+                ["E", "A", "T", "G", "O"]
     ],
     "length": 25
   }
