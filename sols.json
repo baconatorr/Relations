@@ -45,12 +45,12 @@
   },
   {
     "hint": "🧍‍♂️",
-    "valid": ["nerve", "ligament", "brain", "scapula"],
-    "letters": [["T", "E", "M", "I", "L" ],
-                ["R", "N", "A", "G", "A"],
+    "valid": ["nerve", "ligament", "heart", "scapula"],
+    "letters": [["N", "E", "M", "I", "L" ],
+                ["R", "T", "A", "G", "A"],
                 ["E", "V", "E", "U", "L"],
-                ["I", "N", "B", "S", "P"],
-                ["N", "A", "R", "C", "A"]
+                ["T", "N", "H", "S", "P"],
+                ["R", "A", "E", "C", "A"]
     ],
     "length": 25
   }
