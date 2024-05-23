@@ -76,7 +76,7 @@ function loadSolution() {
     .then(data => {
         let index = getDate();
         hint = data[index]["hint"];
-        document.querySelector(".hint").innerText = "Hint: " + hint;
+        document.querySelector(".hint").innerText = "" + hint;
         valid = data[index]["valid"];
         letters = data[index]["letters"];
         length = data[index]["length"];
