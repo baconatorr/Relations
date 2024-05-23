@@ -1,12 +1,12 @@
 [
   {
     "hint": "happy",
-    "valid": ["annoy", "irritate", "bother", "pester"],
-    "letters": [["A", "O", "Y", "I", "R" ],
-                ["N", "N", "R", "I", "E"],
-                ["T", "A", "T", "R", "T"],
-                ["E", "O", "H", "R", "S"],
-                ["B", "T", "E", "P", "E"]
+    "valid": ["joyful", "gleeful", "jaunty", "blithe"],
+    "letters": [["J", "Y", "B", "L", "T" ],
+                ["O", "F", "T", "H", "G"],
+                ["U", "A", "E", "L", "E"],
+                ["J", "L", "U", "F", "E"],
+                ["Y", "T", "N", "U", "L"]
     ],
     "length": 25
   },
