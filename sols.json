@@ -42,7 +42,7 @@
                 ["E", "A", "T", "G", "O"]
     ],
     "length": 25
-  }
+  },
   {
     "hint": "🧍‍♂️",
     "valid": ["nerve", "ligament", "brain", "scapula"],
@@ -53,5 +53,5 @@
                 ["N", "A", "R", "C", "A"]
     ],
     "length": 25
-  },
+  }
 ]
