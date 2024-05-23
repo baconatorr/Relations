@@ -1,6 +1,6 @@
 [
   {
-    "hint": "To mess with",
+    "hint": "happy",
     "valid": ["annoy", "irritate", "bother", "pester"],
     "letters": [["A", "O", "Y", "I", "R" ],
                 ["N", "N", "R", "I", "E"],
@@ -10,48 +10,4 @@
     ],
     "length": 25
   },
-  {
-    "hint": "🥶",
-    "valid": ["cold", "frostbite", "chilly", "freeze"],
-    "letters": [["C", "L", "L", "Y", "E" ],
-                ["H", "I", "F", "R", "E"],
-                ["D", "L", "O", "C", "Z"],
-                ["E", "T", "I", "B", "E"],
-                ["F", "R", "O", "S", "T"]
-    ],
-    "length": 25
-  },
-  {
-    "hint": "🎶",
-    "valid": ["beat", "adagio", "compose", "baritone"],
-    "letters": [["B", "A", "R", "I", "T" ],
-                ["O", "T", "E", "N", "O"],
-                ["I", "G", "A", "E", "B"],
-                ["D", "A", "M", "P", "O"],
-                ["A", "C", "O", "E", "S"]
-    ],
-    "length": 25
-  },
-   {
-    "hint": "Summer Weather",
-    "valid": ["heat", "burning", "sweating", "toasty"],
-    "letters": [["B", "N", "I", "T", "A" ],
-                ["U", "R", "N", "G", "E"],
-                ["S", "Y", "T", "S", "H"],
-                ["W", "I", "N", "A", "T"],
-                ["E", "A", "T", "G", "O"]
-    ],
-    "length": 25
-  },
-  {
-    "hint": "🧍‍♂️",
-    "valid": ["nerve", "ligament", "heart", "scapula"],
-    "letters": [["N", "E", "M", "I", "L" ],
-                ["R", "T", "A", "G", "A"],
-                ["E", "V", "E", "U", "L"],
-                ["T", "N", "H", "S", "P"],
-                ["R", "A", "E", "C", "A"]
-    ],
-    "length": 25
-  }
 ]
