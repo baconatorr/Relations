@@ -43,4 +43,15 @@
     ],
     "length": 25
   }
+  {
+    "hint": "🧍‍♂️",
+    "valid": ["nerve", "ligament", "brain", "scapula"],
+    "letters": [["T", "E", "M", "I", "L" ],
+                ["R", "N", "A", "G", "A"],
+                ["E", "V", "E", "U", "L"],
+                ["I", "N", "B", "S", "P"],
+                ["N", "A", "R", "C", "A"]
+    ],
+    "length": 25
+  },
 ]
