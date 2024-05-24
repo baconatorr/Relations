@@ -63,7 +63,7 @@ function getDate() {
     let currentDate = new Date(`${month}/${day}/${year}`);
     let dateDisplay = document.getElementById('date');
     dateDisplay.innerText = `${month}/${day}`;
-    let compareDate = new Date("5/23/2024");
+    let compareDate = new Date("5/20/2024");
     let diffInTime = currentDate.getTime() - compareDate.getTime();
     if(diffInTime == 0){localStorage.clear};
     let diffInDays = Math.round(diffInTime / (1000 * 3600 * 24));
@@ -76,7 +76,7 @@ function loadSolution() {
     .then(data => {
         let index = getDate();
         hint = data[index]["hint"];
-        document.querySelector(".hint").innerText = "" + hint;
+        document.querySelector(".hint").innerText = "Hint:" + hint;
         valid = data[index]["valid"];
         letters = data[index]["letters"];
         length = data[index]["length"];
